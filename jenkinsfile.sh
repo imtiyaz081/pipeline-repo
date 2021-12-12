@@ -1,12 +1,10 @@
 pipeline {
-    agent none
+    agent any
     stages {
         stage('Build') {
            
-	               git 'https://github.com/imtiyaz081/javarepo.git'
-
-              agent label mvn {
-			
+            steps {
+			git 'https://github.com/imtiyaz081/javarepo.git'
 			sh 'mvn clean install'
                 echo "this is build stage"
             }
