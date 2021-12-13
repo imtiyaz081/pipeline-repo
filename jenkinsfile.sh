@@ -1,10 +1,12 @@
 pipeline {
-    agent any
+    agent any	
     stages {
+	
         stage('Build') {
-           
+		           
             steps {
-			git 'https://github.com/imtiyaz081/javarepo.git'
+			
+			git 'https://github.com/imtiyaz081/javarepo.git'			
 			sh 'mvn clean install'
                 echo "this is build stage"
             }
@@ -12,7 +14,8 @@ pipeline {
 		stage('deploy') {
            
             steps {
-                echo "this is deploy stage"
+			
+			echo "this is deploy stage"
             }
         }
 	stage('test') {
