@@ -3,10 +3,10 @@ pipeline {
     stages {
 	
         stage('Build') {
-		           
+		          
             steps {
-			
-			git 'https://github.com/imtiyaz081/javarepo.git'			
+
+	 git credentialsId: 'cb364375-3f42-4c0a-8dd2-84762daa5c27', url: 'https://github.com/imtiyaz081/javarepo.git'
 			sh 'mvn clean install'
                 echo "this is build stage"
             }
